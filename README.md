@@ -1,3 +1,3 @@
 Portfolio link
 
-**https://madhavaraochalla-portfolio.netlify.app/**
+https://madhavaraochalla-portfolio.netlify.app
