@@ -28,80 +28,50 @@ var el = document.getElementById("str");
   var running = setTimeout(animate, 90);
 })();
 
-// code sleep rep
-// get the element
-const text1 = document.querySelector(".typing-text");
-
-// make a words array
-const words1 = ["eat.", "sleep.", "code.", "repeat."];
-
-// start typing effect
-setTyper(text1, words1);
-
-const text = document.querySelector(".typing-dev");
-
-// make a words array
-const words = [
- 
-  "DevOps Engineer..."
+const lines = [
+  ["DevOps Engineer...", "@Prokopto..."],
+  
 ];
 
-// start typing effect
-setTyper(text, words);
+const line1Element = document.getElementById('line1');
+const line2Element = document.getElementById('line2');
 
-function setTyper(element, words) {
-  const LETTER_TYPE_DELAY = 75;
-  const WORD_STAY_DELAY = 2000;
+let pairIndex = 0;
+let charIndex = 0;
+let typingDirection = 1; // 1 for typing, -1 for erasing
 
-  const DIRECTION_FORWARDS = 0;
-  const DIRECTION_BACKWARDS = 1;
+const TYPE_DELAY = 100; // Delay between typing each letter
+const LINE_DELAY = 2000; // Delay before switching to the next pair
 
-  var direction = DIRECTION_FORWARDS;
-  var wordIndex = 0;
-  var letterIndex = 0;
+function updateText() {
+  const [line1, line2] = lines[pairIndex];
 
-  var wordTypeInterval;
+  if (typingDirection === 1) {
+    // Typing effect
+    line1Element.textContent = line1.substring(0, charIndex);
+    line2Element.textContent = line2.substring(0, charIndex);
 
-  startTyping();
-
-  function startTyping() {
-    wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
-  }
-
-  function typeLetter() {
-    const word = words[wordIndex];
-
-    if (direction == DIRECTION_FORWARDS) {
-      letterIndex++;
-
-      if (letterIndex == word.length) {
-        direction = DIRECTION_BACKWARDS;
-        clearInterval(wordTypeInterval);
-        setTimeout(startTyping, WORD_STAY_DELAY);
-      }
-    } else if (direction == DIRECTION_BACKWARDS) {
-      letterIndex--;
-
-      if (letterIndex == 0) {
-        nextWord();
-      }
+    charIndex++;
+    if (charIndex > Math.max(line1.length, line2.length)) {
+      typingDirection = -1; // Switch to erasing
+      setTimeout(updateText, LINE_DELAY);
+      return;
     }
+  } else {
+    // Erasing effect
+    line1Element.textContent = line1.substring(0, charIndex);
+    line2Element.textContent = line2.substring(0, charIndex);
 
-    const textToType = word.substring(0, letterIndex);
-
-    element.textContent = textToType;
-  }
-
-  function nextWord() {
-    letterIndex = 0;
-    direction = DIRECTION_FORWARDS;
-    wordIndex++;
-
-    if (wordIndex == words.length) {
-      wordIndex = 0;
+    charIndex--;
+    if (charIndex < 0) {
+      typingDirection = 1; // Switch to typing the next pair
+      pairIndex = (pairIndex + 1) % lines.length; // Loop through pairs
     }
   }
+  setTimeout(updateText, TYPE_DELAY);
 }
+
+updateText(); // Start the typing effect
 
 // 1st project  
 document.getElementById("depbus").addEventListener("click", function () {
@@ -116,10 +86,6 @@ document.getElementById("gitbus").addEventListener("click", function () {
     "_blank"
   );
 });
-
-
-
-
 
 
 //2nd prject 
@@ -164,6 +130,11 @@ document.getElementById("linkedin").addEventListener("click", function () {
 document.getElementById("gitprofile").addEventListener("click", function () {
   window.open("https://github.com/Madhavaraochalla", "_blank");
 });
+// Instagram 
+document.getElementById("instagram").addEventListener("click", function () {
+  window.open("https://www.instagram.com/naturelover4583/", "_blank");
+});
+
 
 
 

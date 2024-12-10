@@ -10,7 +10,7 @@ body {
   position: relative;
 
 }
-
+/*navbar*/
 
 nav {
   height: 80px;
@@ -69,6 +69,8 @@ nav .menu-btn i {
 #click {
   display: none;
 }
+
+/*resume*/
 #resume {
   padding-left: 20px;
   margin-top: 50px;
@@ -111,7 +113,7 @@ nav .menu-btn i {
 }
 
 
-/* typing dev */
+/* typing dev(devops) */
 .typing-dev {
   font-size: 29px;
   padding-left: 20px;
@@ -133,7 +135,7 @@ nav .menu-btn i {
     opacity: 1;
   }
 }
-
+/*intoduction*/
 #intro {
   display: flex;
   height: 400px;
@@ -178,7 +180,7 @@ nav .menu-btn i {
   margin-top: 5px;
   margin-left: -10px;
 }
-
+/*floating img in html*/
 @keyframes floating {
   from {
     transform: translate(0, 0px);
@@ -466,6 +468,8 @@ nav .menu-btn i {
   font-family: "Poppins", sans-serif;
   color: #7b7b7b;
   font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 60px;
 }
 .skills {
   display: grid;
@@ -506,6 +510,7 @@ nav .menu-btn i {
     font-size: 40px;
     padding-top: 20px;
   }
+  
   .skills {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -519,14 +524,36 @@ nav .menu-btn i {
 }
 
 @media all and (min-width: 150px) and (max-width: 500px) {
+  /* Adjust margin for the #about section */
   #about + svg {
     margin-bottom: -150px;
   }
+
+  /* For h1 inside mySkills */
   .mySkills > h1 {
     font-size: 30px;
     padding-top: 20px;
     letter-spacing: 7px;
+    text-align: center;
   }
+
+  /* For h1 inside experience section */
+  #experience > h1 {
+    font-size: 30px;
+    padding-top: 20px;
+    letter-spacing: 5px;
+    text-align: center;
+  }
+
+  /* For h1 inside certifications section */
+  #certifications > h1 {
+    font-size: 30px;
+    padding-top: 20px;
+    letter-spacing: 5px;
+    text-align: center;
+  }
+
+  /* Skills Section Layout Adjustments */
   .skills {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -534,13 +561,18 @@ nav .menu-btn i {
     row-gap: 30px;
     padding: 50px 0px 200px 0px;
   }
+#about{
+padding-top: 35%;}
+  /* Styling for skills images and text */
   .skills > div > img {
     width: 30%;
   }
+
   .skills > div > h2 {
     font-size: 13px;
   }
 }
+
 
 /* skills ends  */
 
@@ -631,8 +663,9 @@ nav .menu-btn i {
   background-position: top;
   transition: ease-in-out 3s;
 }
+/*2nd project*/
 .scrollimg .box.box1 {
-  background-image: url(./hospital.jpeg);
+  background-image: url(./Images/hospital.jpeg);
   background-size: cover;
 }
 .scrollimg .box:hover {
@@ -715,23 +748,30 @@ nav .menu-btn i {
   background-position: top;
   transition: ease-in-out 3s;
 }
+/*3rd project*/
 .secondScroll .box.box2 {
-  background-image: url(./website.png);
+  background-image: url(./Images/website.png);
   background-size: cover;
 }
 .secondScroll .box:hover {
   background-position: bottom;
 }
+/*1st project*/
 .secondScroll .box.box0 {
-  background-image: url(./pipeline.jpeg);
+  background-image: url(./Images/pipeline.jpeg);
   background-size: cover;
 }
 
-/* third project  */
+/* 2nd project  */
 .scrollimg .box.box3 {
-  background-image: url(./images/weather.png);
+  background-image: url(./Images/teraform\ project.jpg);
   background-size: cover;
 }
+.secondScroll .box:hover {
+  background-position: bottom;
+}
+
+
 
 @media all and (min-width: 500px) and (max-width: 940px) {
   .projectImg {
@@ -879,41 +919,7 @@ nav .menu-btn i {
   }
 }
 
-/* my contribution starts */
 
-
-#project_contribution {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(1, auto);
-  font-family: "Poppins", sans-serif;
-  width: 90%;
-  margin: auto;
-  gap: 50px;
-  padding-top: 100px;
-  align-content: center;
-  padding-bottom: 200px;
-  letter-spacing: 1px;
-}
-
-
-@media all and (min-width: 500px) and (max-width: 940px) {
-  
-  }
-  #project_contribution {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-  }
- 
-@media all and (min-width: 150px) and (max-width: 500px) {
-  }
-  #project_contribution {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(5, auto);
-    padding-top: 50px;
-  }
 
 /* contact starts */
 .contactme {
@@ -926,6 +932,7 @@ nav .menu-btn i {
   font-weight: 600;
   letter-spacing: 10px;
   text-align: center;
+  justify-content: center;
 }
 .contact {
   display: flex;
@@ -1143,4 +1150,53 @@ form + div > img:hover {
   .typing-text {
     font-size: 18px;
   }
+  
 }
+
+.skills-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #1f1f20;
+  color: #7b7b7b;
+}
+
+.skills-section h1 {
+  text-align: center;
+  font-size: 60px; /* Match size from .mySkills > h1 */
+  letter-spacing: 15px; /* Match letter-spacing */
+  font-family: "Poppins", sans-serif;
+  color: #7b7b7b;
+  font-weight: 700; /* Match font-weight */
+  margin-bottom: 30px; /* Add spacing below heading */
+}
+
+/* Grid Layout */
+.experience-grid, .certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Card Styles */
+.experience-card, .certification-card {
+  background-color: #2a2828;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  text-align: center;
+}
+
+.experience-card h3, .certification-card h3 {
+  font-size: 22px;
+  color: #f9c74f;
+  margin-bottom: 10px;
+  
+}
+
+.experience-card p, .certification-card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
