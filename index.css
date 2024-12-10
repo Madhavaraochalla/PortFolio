@@ -156,12 +156,12 @@ nav .menu-btn i {
   padding-left: 20px;
   height: auto;
   font-family: "Poppins", sans-serif;
-  font-size: 70px;
+  font-size: 65px;
   letter-spacing: 2px;
   color: #da9a07;
   font-weight: bold;
   margin-top: -10px;
-  transition: all 1s ease-in;
+  transition: all 1s ease-in-out;
 }
 #str:hover {
   transform: translatex(50px);
@@ -924,6 +924,8 @@ padding-top: 35%;}
 /* contact starts */
 .contactme {
   padding-top: 200px;
+  text-align: center;
+  justify-content: center;
 }
 .contactme > h1 {
   font-size: 70px;
